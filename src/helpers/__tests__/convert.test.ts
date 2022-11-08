@@ -14,11 +14,7 @@ function testCodecRoundTrip<T extends BufferSource, E = string>(
     let encoded: E = encoder(buffer.buffer as T);
     let decoded: T = decoder(encoded);
 
-    let decodedBuffer = ArrayBuffer.isView(decoded)
-      ? decoded
-      : Buffer.from(decoded);
-
-    expect(decodedBuffer).toEqual(Buffer.from(buffer));
+    expect(Buffer.from(decoded)).toEqual(Buffer.from(buffer));
   }
 }
 
