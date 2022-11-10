@@ -1,0 +1,63 @@
+{
+  "name": "lifted-ui",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A shared library of components and helpers for Lifted user interfaces",
+  "scripts": {
+    "test": "react-scripts test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liftedinit/lifted-ui.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/liftedinit/lifted-ui/issues"
+  },
+  "homepage": "https://github.com/liftedinit/lifted-ui#readme",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^12.20.37",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "dotenv": "^16.0.1",
+    "eslint-config-react-app": "^7.0.0",
+    "prettier": "^2.6.0",
+    "ts-jest": "^27.1.3"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/roboto": "^4.5.8",
+    "@fontsource/rubik": "^4.5.11",
+    "@liftedinit/many-js": "^0.1.0-alpha.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-query": "^4.0.0-alpha.20",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.5.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "testing-library/no-debugging-utils": [
+        "error",
+        {
+          "utilsToCheckFor": {
+            "debug": false,
+            "logRoles": true,
+            "logDOM": true
+          }
+        }
+      ]
+    }
+  }
+}
