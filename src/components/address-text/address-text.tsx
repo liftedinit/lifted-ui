@@ -1,9 +1,9 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { CopyToClipboard, validateAddress } from "shared/components";
+import { CopyToClipboard, validateAddress } from "components";
 import { BoxProps, HStack, Text } from "@chakra-ui/react";
 import { Identity } from "@liftedinit/many-js";
-import { makeShortId } from "shared/helpers";
+import { makeShortId } from "helpers";
 
 export function AddressText({
   addressText,

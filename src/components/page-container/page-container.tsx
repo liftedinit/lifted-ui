@@ -1,4 +1,4 @@
-import { ContainerProps, Container } from "shared/components"
+import { ContainerProps, Container } from "theme"
 import React from "react"
 
 export function PageContainer({

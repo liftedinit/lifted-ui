@@ -1,11 +1,12 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react"
 
-import { Textarea, Tabs, Button, Heading, Text, Input } from "./components";
-import { colors, fonts, styles } from "./foundation";
+import { Textarea, Tabs, Button, Heading, Text, Input } from "./components"
+import { colors, fonts, styles } from "./foundation"
+export * from "@chakra-ui/react"
 
 export const theme = extendTheme({
   colors,
   components: { Button, Heading, Input, Tabs, Text, Textarea },
   fonts,
   styles,
-});
+})

@@ -1,5 +1,5 @@
-import { Flex, Icon, useClipboard, Tooltip } from "@chakra-ui/react";
-import { CopyIcon } from "shared/components";
+import { Flex, Icon, useClipboard, Tooltip } from "@chakra-ui/react"
+import { CopyIcon } from "components"
 export function CopyToClipboard({
   toCopy,
   msg,
@@ -7,13 +7,13 @@ export function CopyToClipboard({
   children,
   containerProps = {},
 }: {
-  toCopy: string;
-  msg?: string;
-  iconProps?: {};
-  children?: React.ReactNode | (({ onCopy }: { onCopy: () => void }) => void);
-  containerProps?: {};
+  toCopy: string
+  msg?: string
+  iconProps?: {}
+  children?: React.ReactNode | (({ onCopy }: { onCopy: () => void }) => void)
+  containerProps?: {}
 }) {
-  const { hasCopied, onCopy } = useClipboard(toCopy);
+  const { hasCopied, onCopy } = useClipboard(toCopy)
   return (
     <Tooltip isOpen={hasCopied} label={msg ?? "Copied to clipboard"}>
       {typeof children === "function" ? (
@@ -24,9 +24,9 @@ export function CopyToClipboard({
           <Icon
             as={CopyIcon}
             boxSize={5}
-            onClick={(e) => {
-              e.stopPropagation();
-              onCopy();
+            onClick={e => {
+              e.stopPropagation()
+              onCopy()
             }}
             cursor="pointer"
             aria-label="copy to clipboard button"
@@ -35,5 +35,5 @@ export function CopyToClipboard({
         </Flex>
       )}
     </Tooltip>
-  );
+  )
 }
