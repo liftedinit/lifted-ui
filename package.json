@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.1.0",
   "description": "A shared library of components and helpers for Lifted user interfaces",
-  "main": "dist/index.js",
   "files": [
     "dist"
   ],
+  "exports": {
+    "./theme": "./dist/theme"
+  },
   "scripts": {
     "test": "react-scripts test",
     "build": "tsc",
