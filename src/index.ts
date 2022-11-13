@@ -1,7 +1,6 @@
-// Static assets must be imported first
-import cubePng from "./assets/cube.png"
-import logoSvg from "./assets/logo.svg"
-export { cubePng, logoSvg }
+// Explicit re-export for static assets
+export { default as cubePng } from "./assets/cube.png"
+export { default as logoSvg } from "./assets/logo.svg"
 
 // Export both ChakraUI components and local components
 export * from "./components"
