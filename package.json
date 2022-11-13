@@ -7,7 +7,12 @@
     "dist"
   ],
   "exports": {
-    "./theme": "./dist/theme"
+    "./theme": {
+      "import": {
+        "types": "./dist/theme/index.d.ts",
+        "defaults": "./dist/theme/index.js"
+      }
+    }
   },
   "scripts": {
     "test": "react-scripts test",
