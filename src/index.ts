@@ -1,6 +1,9 @@
-// export * from "./components"
 export * from "./helpers"
 export * from "./hooks"
 export * from "./lib"
-export { theme, ThemeProvider } from "./theme"
-// export { Modal } from "./components"
+
+// Export both ChakraUI components and local components
+export * from "./components"
+
+// Explicit re-export to override the ChakraUI theme
+export { ThemeProvider, theme } from "./theme"
