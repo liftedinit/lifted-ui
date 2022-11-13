@@ -1,6 +1,6 @@
 // Explicit re-export for static assets
-// export { default as cubePng } from "./assets/cube.png"
-// export { default as logoSvg } from "./assets/logo.svg"
+export { default as cubePng } from "./assets/cube.png"
+export { default as logoSvg } from "./assets/logo.svg"
 
 // Export both ChakraUI components and local components
 export * from "./components"
