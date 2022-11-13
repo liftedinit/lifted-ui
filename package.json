@@ -8,9 +8,10 @@
     "dist"
   ],
   "scripts": {
-    "test": "react-scripts test",
     "build": "tsc",
-    "prepare": "npm run build"
+    "copy-assets": "cp -r ./src/assets ./dist/assets",
+    "prepare": "npm run build && npm run copy-assets",
+    "test": "react-scripts test"
   },
   "repository": {
     "type": "git",
