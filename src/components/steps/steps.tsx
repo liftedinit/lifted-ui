@@ -1,7 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { Box, Center, Collapse } from "@chakra-ui/react"
-import { CheckIcon } from "components"
+import { CheckIcon } from ".."
 
 type UseSteps = {
   initialStep: number

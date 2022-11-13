@@ -1,5 +1,5 @@
 import { Text, TextProps } from "@chakra-ui/react"
-import { makeShortId } from "helpers"
+import { makeShortId } from "../../../helpers"
 
 export function IdentityText({
   fullIdentity,

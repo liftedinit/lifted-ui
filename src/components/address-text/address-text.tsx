@@ -1,9 +1,9 @@
-import React from "react";
-import { useQuery } from "react-query";
-import { CopyToClipboard, validateAddress } from "components";
-import { BoxProps, HStack, Text } from "@chakra-ui/react";
-import { Identity } from "@liftedinit/many-js";
-import { makeShortId } from "helpers";
+import React from "react"
+import { useQuery } from "react-query"
+import { CopyToClipboard, validateAddress } from ".."
+import { BoxProps, HStack, Text } from "@chakra-ui/react"
+import { Identity } from "@liftedinit/many-js"
+import { makeShortId } from "../../helpers"
 
 export function AddressText({
   addressText,
@@ -14,33 +14,33 @@ export function AddressText({
   ...props
 }: React.PropsWithChildren<
   {
-    addressText: string;
-    isFullText?: boolean;
-    textProps?: Record<string, any>;
-    iconProps?: Record<string, any>;
+    addressText: string
+    isFullText?: boolean
+    textProps?: Record<string, any>
+    iconProps?: Record<string, any>
   } & BoxProps
 >) {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const copyToClipboardRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null)
+  const copyToClipboardRef = React.useRef<HTMLDivElement>(null)
   const [displayedAddressText, setDisplayedAddressText] = React.useState(
-    () => addressText
-  );
+    () => addressText,
+  )
 
   React.useEffect(() => {
     if (containerRef?.current && copyToClipboardRef?.current && addressText) {
-      const offsetW = containerRef?.current?.offsetWidth as number;
-      const scrollW = containerRef?.current?.scrollWidth as number;
+      const offsetW = containerRef?.current?.offsetWidth as number
+      const scrollW = containerRef?.current?.scrollWidth as number
       if (scrollW > offsetW) {
-        const copyW = copyToClipboardRef?.current?.offsetWidth as number;
+        const copyW = copyToClipboardRef?.current?.offsetWidth as number
         const shortened = shortenAddressText(
           offsetW - copyW,
           scrollW,
-          addressText
-        );
-        setDisplayedAddressText(shortened);
+          addressText,
+        )
+        setDisplayedAddressText(shortened)
       }
     }
-  }, [addressText, containerRef, copyToClipboardRef]);
+  }, [addressText, containerRef, copyToClipboardRef])
 
   return (
     <HStack
@@ -56,9 +56,9 @@ export function AddressText({
         fontFamily="monospace"
         aria-label="public address"
         title={addressText}
-        onCopy={(e) => {
-          e.clipboardData.setData("text/plain", addressText);
-          e.preventDefault();
+        onCopy={e => {
+          e.clipboardData.setData("text/plain", addressText)
+          e.preventDefault()
         }}
         {...textProps}
       >
@@ -74,7 +74,7 @@ export function AddressText({
         containerProps={{ ref: copyToClipboardRef }}
       />
     </HStack>
-  );
+  )
 }
 
 export function useAddressText(i: Identity | string) {
@@ -82,30 +82,30 @@ export function useAddressText(i: Identity | string) {
     queryKey: ["address", i],
     queryFn: async () => {
       if (i instanceof Identity) {
-        return (await i.getAddress()).toString();
+        return (await i.getAddress()).toString()
       }
-      return typeof i === "string" ? i : "";
+      return typeof i === "string" ? i : ""
     },
-  });
-  return q?.data ?? "";
+  })
+  return q?.data ?? ""
 }
 
-const ELLIPSIS_SIZE = 2;
+const ELLIPSIS_SIZE = 2
 export function shortenAddressText(
   offsetWidth: number,
   scrollWidth: number,
-  addressText: string
+  addressText: string,
 ): string {
-  const isValid = validateAddress(addressText);
-  if (isValid !== true) throw new Error(isValid);
-  if (offsetWidth >= scrollWidth) return addressText;
-  const addressLen = addressText.length;
-  const halfLen = Math.round(addressLen / 2);
-  const avgCharSize = Math.round(scrollWidth / addressLen);
+  const isValid = validateAddress(addressText)
+  if (isValid !== true) throw new Error(isValid)
+  if (offsetWidth >= scrollWidth) return addressText
+  const addressLen = addressText.length
+  const halfLen = Math.round(addressLen / 2)
+  const avgCharSize = Math.round(scrollWidth / addressLen)
   const charsToRemove =
     Math.round((scrollWidth - offsetWidth) / Math.round(avgCharSize)) +
-    ELLIPSIS_SIZE;
-  const first = addressText.slice(0, halfLen - charsToRemove / 2);
-  const second = addressText.slice(halfLen + charsToRemove / 2);
-  return first + "..." + second;
+    ELLIPSIS_SIZE
+  const first = addressText.slice(0, halfLen - charsToRemove / 2)
+  const second = addressText.slice(halfLen + charsToRemove / 2)
+  return first + "..." + second
 }

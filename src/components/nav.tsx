@@ -7,8 +7,8 @@ import {
 } from "react-icons/ri"
 import { Image, Stack } from "@chakra-ui/react"
 
-import { NavItem } from "../components"
-import { logoSvg } from "../"
+import { NavItem } from ".."
+import { logoSvg } from ".."
 
 const navItems = [
   { label: "Dashboard", path: "", icon: RiHome2Line },
