@@ -1,28 +1,28 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Box, Center, Collapse } from "@chakra-ui/react";
-import { CheckIcon } from "shared/components";
+import React from "react"
+import { motion } from "framer-motion"
+import { Box, Center, Collapse } from "@chakra-ui/react"
+import { CheckIcon } from ".."
 
 type UseSteps = {
-  initialStep: number;
-};
+  initialStep: number
+}
 
-const MotionCenter = motion(Center);
+const MotionCenter = motion(Center)
 
 export function Steps({ children }: React.PropsWithChildren<{}>) {
-  const { activeStep } = useStepsContext();
-  const steps = React.Children.toArray(children);
-  const stepCount = steps.length;
+  const { activeStep } = useStepsContext()
+  const steps = React.Children.toArray(children)
+  const stepCount = steps.length
 
   return (
     <>
       {React.Children.map(children, (child, i) => {
         const isCompletedStep =
           (React.isValidElement(child) && child.props.isCompletedStep) ??
-          i < activeStep;
+          i < activeStep
 
-        const isLastStep = i === stepCount - 1;
-        const isCurrentStep = i === activeStep;
+        const isLastStep = i === stepCount - 1
+        const isCurrentStep = i === activeStep
 
         const stepProps = {
           activeStep,
@@ -30,15 +30,15 @@ export function Steps({ children }: React.PropsWithChildren<{}>) {
           isCompletedStep,
           isCurrentStep,
           isLastStep,
-        };
+        }
 
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, stepProps);
+          return React.cloneElement(child, stepProps)
         }
-        return null;
+        return null
       })}
     </>
-  );
+  )
 }
 
 const animationConfig = {
@@ -48,11 +48,11 @@ const animationConfig = {
   exit: { scale: 0.5, opacity: 0 },
   initial: { scale: 0.5, opacity: 0 },
   animate: { scale: 1, opacity: 1 },
-};
+}
 const centerProps = {
   rounded: "full",
   boxSize: 8,
-};
+}
 export function Step({
   activeStep,
   isCompletedStep,
@@ -60,12 +60,12 @@ export function Step({
   label,
   children,
 }: React.PropsWithChildren<{
-  activeStep?: number;
-  isCompletedStep?: boolean;
-  index?: number;
-  label: string;
+  activeStep?: number
+  isCompletedStep?: boolean
+  index?: number
+  label: string
 }>) {
-  const isActive = activeStep === index;
+  const isActive = activeStep === index
   return (
     <>
       <Box
@@ -99,30 +99,30 @@ export function Step({
         <Box pb={4}>{children}</Box>
       </Collapse>
     </>
-  );
+  )
 }
 
-type UseStepsReturnType = ReturnType<typeof useSteps>;
+type UseStepsReturnType = ReturnType<typeof useSteps>
 export function useSteps({ initialStep }: UseSteps) {
-  const [activeStep, setActiveStep] = React.useState(initialStep);
+  const [activeStep, setActiveStep] = React.useState(initialStep)
 
   const nextStep = () => {
-    setActiveStep((prev) => prev + 1);
-  };
+    setActiveStep(prev => prev + 1)
+  }
 
   const prevStep = () => {
-    setActiveStep((prev) => prev - 1);
-  };
+    setActiveStep(prev => prev - 1)
+  }
 
   const reset = () => {
-    setActiveStep(initialStep);
-  };
+    setActiveStep(initialStep)
+  }
 
   const setStep = (step: number) => {
-    setActiveStep(step);
-  };
+    setActiveStep(step)
+  }
 
-  return { nextStep, prevStep, reset, setStep, activeStep };
+  return { nextStep, prevStep, reset, setStep, activeStep }
 }
 
 const StepsContext = React.createContext<UseStepsReturnType>({
@@ -131,17 +131,15 @@ const StepsContext = React.createContext<UseStepsReturnType>({
   reset: () => {},
   setStep: () => {},
   nextStep: () => {},
-});
+})
 
 export function StepsProvider({
   value,
   children,
 }: React.PropsWithChildren<{ value: UseStepsReturnType }>) {
-  return (
-    <StepsContext.Provider value={value}>{children}</StepsContext.Provider>
-  );
+  return <StepsContext.Provider value={value}>{children}</StepsContext.Provider>
 }
 
 export function useStepsContext() {
-  return React.useContext(StepsContext);
+  return React.useContext(StepsContext)
 }

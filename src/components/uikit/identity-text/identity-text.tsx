@@ -1,5 +1,5 @@
-import { Text, TextProps } from "shared/components"
-import { makeShortId } from "shared/helpers"
+import { Text, TextProps } from "@chakra-ui/react"
+import { makeShortId } from "../../../helpers"
 
 export function IdentityText({
   fullIdentity,

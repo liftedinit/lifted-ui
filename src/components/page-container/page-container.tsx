@@ -1,4 +1,4 @@
-import { ContainerProps, Container } from "shared/components"
+import { ContainerProps, Container } from "@chakra-ui/react"
 import React from "react"
 
 export function PageContainer({

@@ -1,9 +1,16 @@
 {
-  "name": "lifted-ui",
+  "name": "@liftedinit/ui",
   "private": true,
   "version": "0.1.0",
   "description": "A shared library of components and helpers for Lifted user interfaces",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsc",
+    "copy-assets": "cp -r ./src/assets ./dist/assets",
+    "prepare": "npm run build && npm run copy-assets",
     "test": "react-scripts test"
   },
   "repository": {
@@ -39,6 +46,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-query": "^4.0.0-alpha.20",
+    "react-router-dom": "^6.4.3",
     "react-scripts": "4.0.3",
     "typescript": "^4.5.4"
   },

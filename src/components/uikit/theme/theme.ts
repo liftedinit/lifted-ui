@@ -1,5 +1,5 @@
 import { extendTheme } from "@chakra-ui/react"
-import { Button, Heading, Text, Textarea, Tabs, Input } from "./components"
+import { Button, Heading, Text, Textarea, Tabs, Input } from ".."
 
 export const theme = extendTheme({
   styles: {
