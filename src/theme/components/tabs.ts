@@ -12,5 +12,7 @@ export const Tabs = {
   },
   defaultProps: {
     colorScheme: "brand.teal",
+    textTransform: "capitalize",
+    fontSize: { base: "sm", md: "md" },
   },
 }
