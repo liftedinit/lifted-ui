@@ -10,6 +10,7 @@ export * from "./form"
 export * from "./icons"
 export * from "./nav"
 export * from "./option-card"
+export * from "./page-container"
 export * from "./steps"
 export * from "./txn-expire-text"
 
