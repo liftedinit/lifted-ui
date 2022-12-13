@@ -1,7 +1,7 @@
 import { Image, Stack } from "@chakra-ui/react"
 import { Link, useResolvedPath, useMatch } from "react-router-dom"
 import { Center, HStack, Icon, Text } from "@chakra-ui/react"
-import { IconType } from "react-icons/lib"
+import { IconType } from "@react-icons/all-files"
 import { logoSvg } from "../.."
 
 interface NavItemProps {
