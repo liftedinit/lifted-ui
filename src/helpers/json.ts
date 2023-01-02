@@ -21,13 +21,16 @@ export function reviver(_: string, value: any) {
       value.data
     ) {
       return Buffer.from(value.data);
-    } else if (value.dataType === AnonymousIdentity.name) {
-      return new AnonymousIdentity();
-    } else if (value.dataType === WebAuthnIdentity.name) {
-      return new WebAuthnIdentity(
-        value.cosePublicKey,
-        base64ToArrayBuffer(value.rawId)
-      );
+    } else {
+      switch (value.dataType) {
+        case AnonymousIdentity.dataType:
+          return new AnonymousIdentity()
+        case WebAuthnIdentity.dataType:
+          return new WebAuthnIdentity(
+              value.cosePublicKey,
+              base64ToArrayBuffer(value.rawId)
+          )
+      }
     }
   }
   return value;
