@@ -1,10 +1,12 @@
 import { AnonymousIdentity, WebAuthnIdentity } from "@liftedinit/many-js";
 import { base64ToArrayBuffer } from "./convert";
 
+const mapDataType = "Map";
+
 export function replacer(_: string, value: any) {
   if (value instanceof Map) {
     return {
-      dataType: "Map",
+      dataType: mapDataType,
       value: Array.from(value.entries()),
     };
   }
@@ -13,7 +15,7 @@ export function replacer(_: string, value: any) {
 
 export function reviver(_: string, value: any) {
   if (typeof value === "object" && value !== null) {
-    if (value.dataType === Map.name) {
+    if (value.dataType === mapDataType) {
       return new Map(value.value);
     } else if (
       value instanceof Object &&
@@ -33,5 +35,6 @@ export function reviver(_: string, value: any) {
       }
     }
   }
+  console.warn("Unknown JSON found, not deserializing:", value);
   return value;
 }

@@ -11,7 +11,8 @@
     "build": "tsc",
     "copy-assets": "cp -r ./src/assets ./dist/assets",
     "prepare": "npm run build && npm run copy-assets",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache"
   },
   "repository": {
     "type": "git",
