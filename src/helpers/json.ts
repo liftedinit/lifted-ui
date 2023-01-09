@@ -3,6 +3,9 @@ import { base64ToArrayBuffer } from "./convert";
 
 const mapDataType = "Map";
 
+const anonymousBackwardCompatibleDataType = 'r';
+const webauthnBackwardCompatibleDataType = 'c';
+
 export function replacer(_: string, value: any) {
   if (value instanceof Map) {
     return {
@@ -25,8 +28,11 @@ export function reviver(_: string, value: any) {
       return Buffer.from(value.data);
     } else {
       switch (value.dataType) {
+        case anonymousBackwardCompatibleDataType:
         case AnonymousIdentity.dataType:
           return new AnonymousIdentity()
+
+        case webauthnBackwardCompatibleDataType:
         case WebAuthnIdentity.dataType:
           return new WebAuthnIdentity(
               value.cosePublicKey,
