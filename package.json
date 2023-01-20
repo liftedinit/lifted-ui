@@ -11,7 +11,8 @@
     "build": "tsc",
     "copy-assets": "cp -r ./src/assets ./dist/assets",
     "prepare": "npm run build && npm run copy-assets",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,7 @@
     "@emotion/styled": "^11.8.1",
     "@fontsource/roboto": "^4.5.8",
     "@fontsource/rubik": "^4.5.11",
-    "@liftedinit/many-js": "^0.1.0-alpha.5",
+    "@liftedinit/many-js": "^0.1.0-alpha.7",
     "@react-icons/all-files": "^4.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
