@@ -3,6 +3,7 @@ import { Icon as BaseIcon, IconProps } from "@chakra-ui/react"
 import { BiDownload } from "@react-icons/all-files/bi/BiDownload"
 import { BiMinusCircle } from "@react-icons/all-files/bi/BiMinusCircle"
 import { BiPlusCircle } from "@react-icons/all-files/bi/BiPlusCircle"
+import { BiTrash } from "@react-icons/all-files/bi/BiTrash"
 import { BsLightningFill } from "@react-icons/all-files/bs/BsLightningFill"
 import { BsPersonDash } from "@react-icons/all-files/bs/BsPersonDash"
 import { BsPersonPlus } from "@react-icons/all-files/bs/BsPersonPlus"
@@ -13,6 +14,7 @@ import { FaCheck } from "@react-icons/all-files/fa/FaCheck"
 import { FaCheckCircle } from "@react-icons/all-files/fa/FaCheckCircle"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaLink } from "@react-icons/all-files/fa/FaLink"
+import { FaLock } from "@react-icons/all-files/fa/FaLock"
 import { FaMinus } from "@react-icons/all-files/fa/FaMinus"
 import { FaRegAddressBook } from "@react-icons/all-files/fa/FaRegAddressBook"
 import { FaRegAddressCard } from "@react-icons/all-files/fa/FaRegAddressCard"
@@ -197,4 +199,12 @@ export function GithubIcon(props: IconProps) {
 
 export function TwitterIcon(props: IconProps) {
   return <Icon as={FaTwitter} color="#1d9bf0" {...props} />
+}
+
+export function DeleteIcon(props: IconProps) {
+  return <Icon as={BiTrash} {...props} />
+}
+
+export function LockIcon(props: IconProps) {
+  return <Icon as={FaLock} {...props} />
 }
