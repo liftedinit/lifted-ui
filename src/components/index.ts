@@ -3,7 +3,6 @@ export * from "@chakra-ui/react"
 
 // Add local components
 
-export * from "./address-text"
 export * from "./copy-to-clipboard"
 export * from "./data-field"
 export * from "./form"

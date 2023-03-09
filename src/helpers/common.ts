@@ -1,11 +1,4 @@
-import { Address } from "@liftedinit/many-js"
-
 const DEFAULT_MAX_DIGITS = 9
-
-export const getAddressFromHex = (hex: any): string => {
-  const identity = Address.fromHex(hex)
-  return identity.toString()
-}
 
 export const makeShortId = (idString: string): string => {
   return typeof idString === "string"
