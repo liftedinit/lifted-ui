@@ -1,1 +1,1 @@
-export { AddressText, useAddressText } from "./address-text"
+export { AddressText } from "./address-text"
