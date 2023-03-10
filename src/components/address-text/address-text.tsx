@@ -1,8 +1,6 @@
 import React from "react"
-import { useQuery } from "react-query"
 import { CopyToClipboard, validateAddress } from ".."
 import { BoxProps, HStack, Text } from "@chakra-ui/react"
-import { Identity } from "@liftedinit/many-js"
 import { makeShortId } from "../../helpers"
 
 export function AddressText({
@@ -75,19 +73,6 @@ export function AddressText({
       />
     </HStack>
   )
-}
-
-export function useAddressText(i: Identity | string) {
-  const q = useQuery({
-    queryKey: ["address", i],
-    queryFn: async () => {
-      if (i instanceof Identity) {
-        return (await i.getAddress()).toString()
-      }
-      return typeof i === "string" ? i : ""
-    },
-  })
-  return q?.data ?? ""
 }
 
 const ELLIPSIS_SIZE = 2
