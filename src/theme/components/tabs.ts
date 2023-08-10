@@ -1,4 +1,4 @@
-import { tabsAnatomy as parts } from "@chakra-ui/anatomy"
+import { tabsAnatomy as parts } from "@chakra-ui/anatomy";
 
 export const Tabs = {
   parts: parts.keys,
@@ -15,4 +15,4 @@ export const Tabs = {
     textTransform: "capitalize",
     fontSize: { base: "sm", md: "md" },
   },
-}
+};

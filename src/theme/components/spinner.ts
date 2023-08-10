@@ -6,4 +6,4 @@ export const Spinner = {
     color: "brand.teal.400",
     size: "xl",
   },
-}
+};

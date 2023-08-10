@@ -3,4 +3,4 @@ export const Text = {
     color: "brand.black",
     fontWeight: "normal",
   },
-}
+};
