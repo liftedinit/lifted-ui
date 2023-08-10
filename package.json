@@ -1,8 +1,8 @@
 {
   "name": "@liftedinit/ui",
   "private": true,
-  "version": "0.1.0",
-  "description": "A shared library of components and helpers for Lifted user interfaces",
+  "version": "0.2.0",
+  "description": "A ChakraUI theme for Lifted user interfaces",
   "main": "./dist/index.js",
   "files": [
     "dist"
@@ -10,9 +10,7 @@
   "scripts": {
     "build": "tsc",
     "copy-assets": "cp -r ./src/assets ./dist/assets",
-    "prepare": "npm run build && npm run copy-assets",
-    "test": "react-scripts test",
-    "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache"
+    "prepare": "npm run build && npm run copy-assets"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.0",
@@ -23,7 +21,6 @@
   "devDependencies": {
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "dotenv": "^16.0.1",
     "eslint-config-react-app": "^7.0.0",
     "prettier": "^3.0.1",
     "prettier-plugin-organize-imports": "^3.2.3",
