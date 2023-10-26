@@ -1,6 +1,6 @@
 import { mode } from "@chakra-ui/theme-tools";
 
-export const Table = (props) => {
+export const Table = (props: any) => {
   return {
     baseStyle: {
       tr: {
