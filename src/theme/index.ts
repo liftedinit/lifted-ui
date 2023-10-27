@@ -20,6 +20,29 @@ export const theme = extendTheme({
           borderColor: "blue.500",
         },
       },
+      variants: {
+        simple: (props:any) => ({
+          th: {
+            color: mode("gray.600", "gray.400"),
+            borderBottom: "1px",
+            borderColor: mode("lifted.gray.100", "lifted.gray.600"),
+          },
+          td: {
+            borderBottom: "1px",
+            borderColor: mode("lifted.gray.100", "lifted.gray.600"),
+          },
+          caption: {
+            color: mode("lifted.gray.600", "lifted.gray.100"),
+          },
+          tfoot: {
+            tr: {
+              "&:last-of-type": {
+                th: { borderBottomWidth: 0 },
+              },
+            },
+          },
+        }),
+      },
     },
   },
   fonts,
