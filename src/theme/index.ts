@@ -11,114 +11,16 @@ export const theme = extendTheme({
   },
   colors,
   components: {
-    Table: (props: any) => ({
+    Table: {
       baseStyle: {
-        table: {
-          fontVariantNumeric: "lining-nums tabular-nums",
-          borderCollapse: "collapse",
-          width: "full",
-        },
         th: {
-          fontFamily: "heading",
-          fontWeight: "bold",
-          textTransform: "uppercase",
-          letterSpacing: "wider",
-          textAlign: "start",
+          borderColor: "red.500",
         },
         td: {
-          textAlign: "start",
-        },
-        caption: {
-          mt: 4,
-          fontFamily: "heading",
-          textAlign: "center",
-          fontWeight: "medium",
+          borderColor: "blue.500",
         },
       },
-      sizes: {
-        sm: {
-          th: {
-            px: "4",
-            py: "1",
-            lineHeight: "4",
-            fontSize: "xs",
-          },
-          td: {
-            px: "4",
-            py: "2",
-            fontSize: "sm",
-            lineHeight: "4",
-          },
-          caption: {
-            px: "4",
-            py: "2",
-            fontSize: "xs",
-          },
-        },
-        md: {
-          th: {
-            px: "6",
-            py: "3",
-            lineHeight: "4",
-            fontSize: "xs",
-          },
-          td: {
-            px: "6",
-            py: "4",
-            lineHeight: "5",
-          },
-          caption: {
-            px: "6",
-            py: "2",
-            fontSize: "sm",
-          },
-        },
-        lg: {
-          th: {
-            px: "8",
-            py: "4",
-            lineHeight: "5",
-            fontSize: "sm",
-          },
-          td: {
-            px: "8",
-            py: "5",
-            lineHeight: "6",
-          },
-          caption: {
-            px: "6",
-            py: "2",
-            fontSize: "md",
-          },
-        },
-      },
-      variants: {
-        simple: {
-          th: {
-            color: mode("gray.600", "gray.400")(props),
-            borderBottom: "1px",
-            borderColor: mode("lifted.gray.100", "lifted.gray.600")(props),
-          },
-          td: {
-            borderBottom: "1px",
-            borderColor: mode("lifted.gray.100", "lifted.gray.600")(props),
-          },
-          caption: {
-            color: mode("lifted.gray.600", "lifted.gray.100")(props),
-          },
-          tfoot: {
-            tr: {
-              "&:last-of-type": {
-                th: { borderBottomWidth: 0 },
-              },
-            },
-          },
-        },
-      },
-      defaultProps: {
-        variant: "simple",
-      }
-    }),
+    },
   },
   fonts,
   styles,
