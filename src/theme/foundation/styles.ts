@@ -16,10 +16,10 @@ export const styles = {
       borderBottomColor: mode("lifted.gray.200","lifted.gray.500",)(props),
     },
     ".apexcharts-tooltip-title": {
-      color: mode("black","white")(props),
+      color: mode("black","lifted.gray.500")(props),
     },
     ".apexcharts-tooltip-ygroup span": {
-      color: mode("black","white")(props),
+      color: mode("black","lifted.gray.500")(props),
     },
   }),
 };
