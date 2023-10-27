@@ -12,8 +12,26 @@ export const styles = {
       color: mode("black","white")(props),
       fill: mode("black","white")(props),
     },
-    ".table-lifted td": {
+    ".talib-table td": {
       borderBottomColor: mode("lifted.gray.200","lifted.gray.500",)(props),
+    },
+    ".talib-chart .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title": {
+      bg: mode("lifted.gray.100","lifted.gray.800",)(props),
+      borderBottomColor: mode("lifted.gray.200","lifted.gray.500",)(props),
+    },
+    ".talib-chart .apexcharts-tooltip-title": {
+      color: mode("black","lifted.gray.500")(props),
+    },
+    ".talib-chart .apexcharts-tooltip.apexcharts-theme-light" : {
+      bg: mode("lifted.gray.100","lifted.gray.700",)(props),
+      color: mode("black","white")(props),
+      borderColor: mode("lifted.gray.200","lifted.gray.500",)(props),
+    },
+    ".talib-chart .apexcharts-tooltip-text-y-label": {
+      color: mode("black","white")(props),
+    },
+    ".talib-chart .pexcharts-tooltip-text-y-value": { 
+      color: mode("black","white")(props),
     },
   }),
 };
