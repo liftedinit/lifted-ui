@@ -12,13 +12,8 @@ export const styles = {
       color: mode("black","white")(props),
       fill: mode("black","white")(props),
     },
-    "tbody tr": {
+    ".table-lifted td": {
       borderBottomColor: mode("lifted.gray.200","lifted.gray.400",)(props),
-      borderBottomWidth: "1px",
     },
-    "tbody td": {
-      borderBottomColor: mode("lifted.gray.200 !important","lifted.gray.400 !important",)(props),
-      borderBottomWidth: "1px",
-    }
   }),
 };
