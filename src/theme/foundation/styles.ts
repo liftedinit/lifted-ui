@@ -11,6 +11,12 @@ export const styles = {
     "text": {
       color: mode("black","white")(props),
       fill: mode("black","white")(props),
+    },
+    "tr": {
+      borderColor: mode("lifted.gray.200","lifted.gray.500",)(props),
+    },
+    "td": {
+      borderColor: mode("lifted.gray.200","lifted.gray.500",)(props),
     }
   }),
 };
