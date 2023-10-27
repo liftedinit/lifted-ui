@@ -10,9 +10,6 @@ export const theme = extendTheme({
   },
   colors,
   components: { 
-    Button, 
-    Heading, 
-    Input, 
     Table: {
       baseStyle: {
         th: {
@@ -23,9 +20,6 @@ export const theme = extendTheme({
         },
       },
     },
-    Tabs, 
-    Text, 
-    Textarea 
   },
   fonts,
   styles,
