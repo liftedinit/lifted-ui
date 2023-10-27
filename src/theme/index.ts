@@ -11,7 +11,7 @@ export const theme = extendTheme({
   },
   colors,
   components: {
-    Table: (props: Record<string, any>) => ({
+    Table: (props: any) => ({
       baseStyle: {
         table: {
           fontVariantNumeric: "lining-nums tabular-nums",
