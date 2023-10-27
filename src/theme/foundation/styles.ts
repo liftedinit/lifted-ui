@@ -13,7 +13,7 @@ export const styles = {
       fill: mode("black","white")(props),
     },
     ".table-lifted td": {
-      borderBottomColor: mode("lifted.gray.200","lifted.gray.400",)(props),
+      borderBottomColor: mode("lifted.gray.200","lifted.gray.500",)(props),
     },
   }),
 };
