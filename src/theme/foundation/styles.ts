@@ -17,7 +17,7 @@ export const styles = {
       borderBottomWidth: "1px",
     },
     "tbody td": {
-      borderBottomColor: mode("lifted.gray.200","lifted.gray.400",)(props),
+      borderBottomColor: mode("lifted.gray.200 !important","lifted.gray.400 !important",)(props),
       borderBottomWidth: "1px",
     }
   }),
