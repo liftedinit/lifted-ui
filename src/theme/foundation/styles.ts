@@ -13,10 +13,10 @@ export const styles = {
       fill: mode("black","white")(props),
     },
     "tbody tr": {
-      borderBottomColor: mode("lifted.gray.200","lifted.gray.500",)(props),
+      borderBottomColor: mode("lifted.gray.200","lifted.gray.400",)(props),
     },
     "tbody td": {
-      borderBottomColor: mode("lifted.gray.200","lifted.gray.500",)(props),
+      borderBottomColor: mode("lifted.gray.200","lifted.gray.400",)(props),
     }
   }),
 };
