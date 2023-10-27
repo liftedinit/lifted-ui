@@ -15,5 +15,11 @@ export const styles = {
     ".table-lifted td": {
       borderBottomColor: mode("lifted.gray.200","lifted.gray.500",)(props),
     },
+    ".apexcharts-tooltip-title": {
+      color: mode("black","white")(props),
+    },
+    ".apexcharts-tooltip-ygroup span": {
+      color: mode("black","white")(props),
+    },
   }),
 };
