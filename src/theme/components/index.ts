@@ -3,7 +3,6 @@ export * from "./heading"
 export * from "./input"
 export * from "./spinner"
 export * from "./tabs"
-export * from "./table"
 export * from "./text"
 export * from "./textarea"
 
