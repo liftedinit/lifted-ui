@@ -9,7 +9,24 @@ export const theme = extendTheme({
     useSystemColorMode: false,
   },
   colors,
-  components: { Button, Heading, Input, Table, Tabs, Text, Textarea },
+  components: { 
+    Button, 
+    Heading, 
+    Input, 
+    Table: {
+      baseStyle: {
+        th: {
+          borderColor: "lifted.gray.200", 
+        },
+        td: {
+          borderColor: "lifted.gray.200",
+        },
+      },
+    },
+    Tabs, 
+    Text, 
+    Textarea 
+  },
   fonts,
   styles,
 })
