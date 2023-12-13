@@ -10,7 +10,7 @@ export function CopyToClipboard({
   toCopy: string
   msg?: string
   iconProps?: {}
-  children?: React.ReactNode | (({ onCopy }: { onCopy: () => void }) => void)
+  children?: React.ReactNode | (({ onCopy }: { onCopy: () => void }) => React.ReactNode)
   containerProps?: {}
 }) {
   const { hasCopied, onCopy } = useClipboard(toCopy)
