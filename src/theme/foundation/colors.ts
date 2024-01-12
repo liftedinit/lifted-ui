@@ -63,5 +63,9 @@ export const colors = {
   },
   "lifted.neon": {
     "500": "#65E665",
+  },
+  "lifted.black": {
+    "800": "#15151a",
+    "900": "#03030f"
   }
 };
