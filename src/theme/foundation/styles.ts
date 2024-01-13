@@ -3,8 +3,8 @@ import { mode } from "@chakra-ui/theme-tools";
 export const styles = {
   global: (props: Record<string, any>) => ({ 
     "html,body,#root": {
-      bg: mode("lifted.gray.100","lifted.gray.800",)(props),
-      bgColor: mode("lifted.gray.100","lifted.gray.800",)(props),
+      bg: mode("lifted.gray.100","#03030f",)(props),
+      bgColor: mode("lifted.gray.100","#03030f",)(props),
       color: mode("black","white")(props),
       height: "100%",
     },
@@ -16,7 +16,7 @@ export const styles = {
       borderBottomColor: mode("lifted.gray.200","lifted.gray.500",)(props),
     },
     ".talib-chart .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title": {
-      bg: mode("lifted.gray.100","lifted.gray.800",)(props),
+      bg: mode("lifted.gray.100","#03030f",)(props),
       borderBottomColor: mode("lifted.gray.200","lifted.gray.500",)(props),
     },
     ".talib-chart .apexcharts-tooltip-title": {
