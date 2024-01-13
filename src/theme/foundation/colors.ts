@@ -61,4 +61,14 @@ export const colors = {
     "800": "#004b43",
     "900": "#003832",
   },
+  "lifted.neongreen": {
+    "500": "#65E665",
+  },
+  "lifted.neonblue": {
+    "500": "#04d9ff",
+  },
+  "lifted.black": {
+    "800": "#15151a",
+    "900": "#03030f"
+  }
 };
