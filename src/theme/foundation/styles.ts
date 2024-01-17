@@ -38,8 +38,9 @@ export const styles = {
       textDecoration: "none",
       cursor: "pointer"
     },
-    ".metric-nav a:active": { 
-      color: "brand.teal.50",
+    ".metric-nav .active": { 
+      color: "brand.teal.500",
+      fontWeight: "bold",
       textDecoration: "none"
     }
   }),
