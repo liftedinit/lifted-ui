@@ -33,7 +33,13 @@ export const styles = {
     ".talib-chart .apexcharts-tooltip-text-y-value": { 
       color: mode("black","white")(props),
     },
-    ".metric-nav a p:hover": {color: "brand.teal.500"},
-    ".metric-nav a p:active": { color: "brand.teal.50"}
+    ".metric-nav a:hover": { 
+      color: "brand.teal.500",
+      textDecoration: "none",
+    },
+    ".metric-nav a:active": { 
+      color: "brand.teal.50",
+      textDecoration: "none"
+    }
   }),
 };
