@@ -36,6 +36,7 @@ export const styles = {
     ".metric-nav a:hover": { 
       color: "brand.teal.500",
       textDecoration: "none",
+      cursor: "pointer"
     },
     ".metric-nav a:active": { 
       color: "brand.teal.50",
