@@ -30,8 +30,10 @@ export const styles = {
     ".talib-chart .apexcharts-tooltip-text-y-label": {
       color: mode("black","white")(props),
     },
-    ".talib-chart .pexcharts-tooltip-text-y-value": { 
+    ".talib-chart .apexcharts-tooltip-text-y-value": { 
       color: mode("black","white")(props),
     },
+    ".metric-nav a p:hover": {color: "brand.teal.500"},
+    ".metric-nav a p:active": { color: "brand.teal.50"}
   }),
 };
