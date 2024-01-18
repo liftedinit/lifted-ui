@@ -43,6 +43,9 @@ export const styles = {
       fontWeight: "bold",
       textDecoration: "none"
     },
+    ".top-nav a": {
+      fontSize: 47
+    },
     ".top-nav a:hover": { 
       color: "brand.teal.500",
       textDecoration: "none",
