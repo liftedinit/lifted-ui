@@ -50,7 +50,6 @@ export const styles = {
     },
     ".top-nav .active": { 
       color: "brand.teal.500",
-      fontWeight: "bold",
       textDecoration: "none"
     }
   }),
