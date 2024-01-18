@@ -42,6 +42,16 @@ export const styles = {
       color: "brand.teal.500",
       fontWeight: "bold",
       textDecoration: "none"
+    },
+    ".top-nav a:hover": { 
+      color: "brand.teal.500",
+      textDecoration: "none",
+      cursor: "pointer"
+    },
+    ".top-nav .active": { 
+      color: "brand.teal.500",
+      fontWeight: "bold",
+      textDecoration: "none"
     }
   }),
 };
