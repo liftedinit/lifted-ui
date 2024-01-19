@@ -44,7 +44,7 @@ export const styles = {
       textDecoration: "none"
     },
     ".top-nav a": {
-      fontSize: "22px",
+      fontSize: "20px",
       lineHeight: "47px",
       paddingRight: "5px"
     },
