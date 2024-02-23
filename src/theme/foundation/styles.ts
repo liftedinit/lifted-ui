@@ -56,6 +56,11 @@ export const styles = {
     ".top-nav .active": { 
       color: "brand.teal.500",
       textDecoration: "none"
-    }
+    },
+    ".top-nav-dropdown a:hover": { 
+      color: "brand.teal.500",
+      textDecoration: "none",
+      cursor: "pointer"
+    },
   }),
 };
