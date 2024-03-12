@@ -28,15 +28,8 @@ export const amountFormatter = (
 ) => {
   const precision = Big(`1e${-maxDigits}`)
   const amount = Big(amt.toString()).times(precision)
-  let amountNumber
-  try {
-    amountNumber = amount.toNumber()
     return new Intl.NumberFormat("en-US", {
       minimumFractionDigits: minDigits,
       maximumFractionDigits: maxDigits,
-    }).format(amountNumber)
-  } catch (e) {
-    console.error("Error converting amount to number. Loss of precision detected", e)
-    throw e
-  }
+    }).format(amount.toFixed() as any) // Typescript complains about the string parameter but it should be supported
 }

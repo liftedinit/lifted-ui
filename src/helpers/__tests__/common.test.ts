@@ -38,6 +38,7 @@ describe("amountFormatter", () => {
     setupAmountFormatter("0.000000001", BigInt(1))
     setupAmountFormatter("1", BigInt(1000000000))
     setupAmountFormatter("120.000000005", BigInt(120000000005))
+    setupAmountFormatter("1,000,000,000,000,001", BigInt("1000000000000001000000000"))
     setupAmountFormatter("1.5", BigInt(150000), undefined, 5)
     setupAmountFormatter("155.55559", BigInt(15555559), undefined, 5)
     setupAmountFormatter("9,155.55559", BigInt(915555559), undefined, 5)
