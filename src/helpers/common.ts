@@ -15,7 +15,7 @@ export const parseNumberToBigInt = (
   v: string,
   maxDigits: number = DEFAULT_MAX_DIGITS,
 ) => {
-  const amount = Big(v.toString())
+  const amount = Big(v)
   const precision = Big(`1e${maxDigits}`)
   return BigInt(amount.times(precision).toString())
 }
