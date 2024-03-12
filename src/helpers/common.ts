@@ -1,3 +1,8 @@
+import Big from "big.js"
+
+// Big constructor will throw if argument is not a string or Big
+Big.strict = true
+
 const DEFAULT_MAX_DIGITS = 9
 
 export const makeShortId = (idString: string): string => {
@@ -9,18 +14,28 @@ export const makeShortId = (idString: string): string => {
 export const parseNumberToBigInt = (
   v: number,
   maxDigits: number = DEFAULT_MAX_DIGITS,
-) => BigInt(Math.round(v * 10 ** maxDigits))
+) => {
+  const amount = Big(v.toString())
+  const precision = Big(`1e${maxDigits}`)
+  return BigInt(amount.times(precision).toString())
+}
 
 export const amountFormatter = (
   amt: bigint,
   minDigits: number = 0,
   maxDigits: number = DEFAULT_MAX_DIGITS,
 ) => {
-  const amount = parseFloat(amt.toString()) / 10 ** maxDigits
-  const amountString = new Intl.NumberFormat("en-US", {
-    minimumFractionDigits: minDigits,
-    maximumFractionDigits: maxDigits,
-  }).format(amount)
-
-  return amountString
+  const precision = Big(`1e${-maxDigits}`)
+  const amount = Big(amt.toString()).times(precision)
+  let amountNumber
+  try {
+    amountNumber = amount.toNumber()
+    return new Intl.NumberFormat("en-US", {
+      minimumFractionDigits: minDigits,
+      maximumFractionDigits: maxDigits,
+    }).format(amountNumber)
+  } catch (e) {
+    console.error("Error converting amount to number. Loss of precision detected", e)
+    throw e
+  }
 }
