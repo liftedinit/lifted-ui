@@ -15,6 +15,7 @@ describe("parseNumberToBigInt", () => {
     setupParseNumberToBigInt(BigInt(1000000000), "1.0")
     setupParseNumberToBigInt(BigInt(1000005599), "1.000005599")
     setupParseNumberToBigInt(BigInt(1000000), ".001")
+    setupParseNumberToBigInt(BigInt("1000000000000001000000000"), "1000000000000001")
     setupParseNumberToBigInt(BigInt(1), ".000000001")
     setupParseNumberToBigInt(BigInt(1), ".00001", 5)
     setupParseNumberToBigInt(BigInt(10000), ".1", 5)
