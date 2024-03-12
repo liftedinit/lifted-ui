@@ -17,8 +17,7 @@ export const parseNumberToBigInt = (
 ) => {
   const amount = Big(v)
   const precision = Big(`1e${maxDigits}`)
-  const b = amount.times(precision).toString()
-  console.log("Big.ToString", b)
+  const b = amount.times(precision).toFixed()
   return BigInt(b)
 }
 
