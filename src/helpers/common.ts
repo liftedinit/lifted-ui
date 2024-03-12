@@ -1,3 +1,8 @@
+import Big from "big.js"
+
+// Big constructor will throw if argument is not a string or Big
+Big.strict = true
+
 const DEFAULT_MAX_DIGITS = 9
 
 export const makeShortId = (idString: string): string => {
@@ -7,20 +12,24 @@ export const makeShortId = (idString: string): string => {
 }
 
 export const parseNumberToBigInt = (
-  v: number,
+  v: string,
   maxDigits: number = DEFAULT_MAX_DIGITS,
-) => BigInt(Math.round(v * 10 ** maxDigits))
+) => {
+  const amount = Big(v)
+  const precision = Big(`1e${maxDigits}`)
+  const b = amount.times(precision).toFixed()
+  return BigInt(b)
+}
 
 export const amountFormatter = (
   amt: bigint,
   minDigits: number = 0,
   maxDigits: number = DEFAULT_MAX_DIGITS,
 ) => {
-  const amount = parseFloat(amt.toString()) / 10 ** maxDigits
-  const amountString = new Intl.NumberFormat("en-US", {
-    minimumFractionDigits: minDigits,
-    maximumFractionDigits: maxDigits,
-  }).format(amount)
-
-  return amountString
+  const precision = Big(`1e${-maxDigits}`)
+  const amount = Big(amt.toString()).times(precision)
+    return new Intl.NumberFormat("en-US", {
+      minimumFractionDigits: minDigits,
+      maximumFractionDigits: maxDigits,
+    }).format(amount.toFixed() as any) // Typescript complains about the string parameter but it should be supported
 }
