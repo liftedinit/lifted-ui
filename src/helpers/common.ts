@@ -12,7 +12,7 @@ export const makeShortId = (idString: string): string => {
 }
 
 export const parseNumberToBigInt = (
-  v: number,
+  v: string,
   maxDigits: number = DEFAULT_MAX_DIGITS,
 ) => {
   const amount = Big(v.toString())

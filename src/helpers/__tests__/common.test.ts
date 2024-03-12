@@ -5,7 +5,7 @@ function setupParseNumberToBigInt(
   numStr: string,
   maxDigits?: number,
 ) {
-  expect(parseNumberToBigInt(parseFloat(numStr), maxDigits)).toEqual(
+  expect(parseNumberToBigInt(numStr, maxDigits)).toEqual(
     expectedBigInt,
   )
 }
