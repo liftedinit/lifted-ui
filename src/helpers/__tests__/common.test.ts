@@ -5,7 +5,7 @@ function setupParseNumberToBigInt(
   numStr: string,
   maxDigits?: number,
 ) {
-  expect(parseNumberToBigInt(parseFloat(numStr), maxDigits)).toEqual(
+  expect(parseNumberToBigInt(numStr, maxDigits)).toEqual(
     expectedBigInt,
   )
 }
@@ -15,6 +15,7 @@ describe("parseNumberToBigInt", () => {
     setupParseNumberToBigInt(BigInt(1000000000), "1.0")
     setupParseNumberToBigInt(BigInt(1000005599), "1.000005599")
     setupParseNumberToBigInt(BigInt(1000000), ".001")
+    setupParseNumberToBigInt(BigInt("1000000000000001000000000"), "1000000000000001")
     setupParseNumberToBigInt(BigInt(1), ".000000001")
     setupParseNumberToBigInt(BigInt(1), ".00001", 5)
     setupParseNumberToBigInt(BigInt(10000), ".1", 5)
@@ -37,6 +38,7 @@ describe("amountFormatter", () => {
     setupAmountFormatter("0.000000001", BigInt(1))
     setupAmountFormatter("1", BigInt(1000000000))
     setupAmountFormatter("120.000000005", BigInt(120000000005))
+    setupAmountFormatter("1,000,000,000,000,001", BigInt("1000000000000001000000000"))
     setupAmountFormatter("1.5", BigInt(150000), undefined, 5)
     setupAmountFormatter("155.55559", BigInt(15555559), undefined, 5)
     setupAmountFormatter("9,155.55559", BigInt(915555559), undefined, 5)
