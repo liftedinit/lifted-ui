@@ -19,4 +19,4 @@ export { Breadcrumb } from "./breadcrumb"
 export { Modal } from "./modal"
 export { useToast } from "./toast"
 
-export { Step } from "./steps"
+export { Step, StepsProvider, Steps } from "./steps"
