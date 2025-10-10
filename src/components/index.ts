@@ -11,6 +11,7 @@ export * from "./icons"
 export * from "./nav"
 export * from "./option-card"
 export * from "./page-container"
+export { Step, Steps, StepsProvider, useSteps, useStepsContext } from "./steps"
 export * from "./txn-expire-text"
 
 // Explicit re-export to override ChakraUI
@@ -19,4 +20,3 @@ export { Breadcrumb } from "./breadcrumb"
 export { Modal } from "./modal"
 export { useToast } from "./toast"
 
-export { Step, StepsProvider, Steps } from "./steps"
