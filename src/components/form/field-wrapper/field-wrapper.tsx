@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 
 export type FieldWrapperProps = {
-  label?: React.ReactNode;
+  label?: React.ReactNode | (() => React.ReactNode);
   children: React.ReactNode;
   error?: string | undefined;
   description?: string;

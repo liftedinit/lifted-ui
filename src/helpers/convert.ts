@@ -6,8 +6,10 @@ export const Hex2Base64 = (input: string) => {
   return Buffer.from(input, 'hex').toString('base64')
 }
 
-export const base64ToArrayBuffer = (str: string): ArrayBuffer =>
-  Buffer.from(str, "base64")
+export const base64ToArrayBuffer = (str: string): ArrayBuffer => {
+  const buf = Buffer.from(str, "base64")
+  return buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength)
+}
 
 export const arrayBufferToBase64 = (buffer: ArrayBuffer): string =>
   Buffer.from(buffer).toString("base64")
