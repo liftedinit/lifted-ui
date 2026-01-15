@@ -3,8 +3,8 @@ import { mode } from "@chakra-ui/theme-tools";
 export const styles = {
   global: (props: Record<string, any>) => ({
     "html,body,#root": {
-      bg: mode("lifted.gray.100", "#03030f")(props),
-      bgColor: mode("lifted.gray.100", "#03030f")(props),
+      bg: mode("lifted.gray.50", "#03030f")(props),
+      bgColor: mode("lifted.gray.50", "#03030f")(props),
       color: mode("black", "white")(props),
       height: "100%",
     },
