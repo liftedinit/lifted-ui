@@ -2,7 +2,6 @@ import { Image, Stack } from "@chakra-ui/react"
 import { Link, useResolvedPath, useMatch } from "react-router-dom"
 import { Center, HStack, Icon, Text } from "@chakra-ui/react"
 import { IconType } from "@react-icons/all-files"
-import { logoSvg } from "../.."
 
 interface NavItemProps {
   path: string
@@ -37,12 +36,13 @@ export function NavItem({ path, label, icon }: NavItemProps) {
 
 interface NavProps {
   navItems: NavItemProps[]
+  logoSrc?: string
 }
 
-export function Nav({ navItems }: NavProps) {
+export function Nav({ navItems, logoSrc }: NavProps) {
   return (
     <Stack boxShadow="xl" h="100vh">
-      <Image boxSize="6rem" src={logoSvg} alt="Lifted Logo" p={3} />
+      {logoSrc && <Image boxSize="6rem" src={logoSrc} alt="Logo" p={3} />}
       {navItems.map(NavItem)}
     </Stack>
   )
