@@ -1,7 +1,7 @@
 {
   "name": "@liftedinit/ui",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A shared library of components and helpers for Lifted user interfaces",
   "main": "./dist/index.js",
   "files": [
